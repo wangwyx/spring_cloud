@@ -1,0 +1,15 @@
+#权限需要添加spring-boot-starter-security pom依赖
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: password123
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://user:password123@localhost:8761/eureka
