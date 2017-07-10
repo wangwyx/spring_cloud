@@ -22,6 +22,9 @@ public class MovieController {
   public User findById(@PathVariable Long id) {
 
     //vip 虚拟IP microservice-provider-user
+    ServiceInstance serviceInstance = this.loadBalancerClient.choose("microservice-provider-user");
+    System.out.println("===="+serviceInstance.getHost()+serviceInstance.getPort()+": "+serviceInstance.getServiceId());
+
     return this.restTemplate.getForObject("http://microservice-provider-user/simple/" + id, User.class);
   }
 

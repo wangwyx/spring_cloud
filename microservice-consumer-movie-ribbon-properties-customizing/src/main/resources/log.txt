@@ -1,0 +1,13 @@
+How to Use Ribbon Without Eureka
+1.Suppose you have declared a @RibbonClient for "stores", and Eureka is not in use (and not even on the classpath)
+stores:
+  ribbon:
+    listOfServers: example.com,google.com
+2.有ribbon但是禁用功能
+Disable Eureka use in Ribbon
+
+在application.yml
+ribbon:
+  eureka:
+   enabled: false
+

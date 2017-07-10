@@ -1,0 +1,22 @@
+#在eureka显示页面显示Application的name,使用小写
+spring:
+  application:
+    name: microservice-consumer-movie-ribbon
+server:
+  port: 7908
+#user:
+  #userServicePath: http://localhost:7900/simple/
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8761/eureka
+  #将鼠标指向连接后左下方显示ip
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+  #spring:application:name
+  microservice-provider-user:
+    ribbon:
+      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
