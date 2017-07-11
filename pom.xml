@@ -29,6 +29,8 @@
         <module>microservice-consumer-movie-ribbon</module>
         <module>microservice-consumer-movie-ribbon-properties-customizing</module>
         <module>microservice-consumer-movie-feign</module>
+        <module>microserviceconsumermoviefeigncustomizing</module>
+        <module>microservice-discovery-eureka-ha</module>
     </modules>
 
     <properties>

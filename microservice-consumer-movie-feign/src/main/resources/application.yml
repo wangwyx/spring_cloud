@@ -4,7 +4,7 @@ spring:
     name: microservice-consumer-movie
 server:
   port: 7901
- eureka:
+eureka:
   client:
     healthcheck:
       enabled: true
