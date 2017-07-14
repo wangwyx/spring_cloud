@@ -8,8 +8,13 @@ security:
 server:
   port: 8761
 eureka:
+  datacenter: cloud
+  environment: product
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
       defaultZone: http://user:password123@localhost:8761/eureka
+  dashboard:
+    enabled: true  #首页面板
+    path: /infox
