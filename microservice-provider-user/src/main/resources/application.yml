@@ -34,3 +34,8 @@ eureka:
       lilizhou: BBC  # 不会影响客户端行为
     lease-renewal-interval-in-seconds: 5
     #appname: userService
+info:
+  app.name: user_service
+  company.name: www.wyx.com
+  build.artifactId: $project.artifactId$
+  build.version: $$project.version$
