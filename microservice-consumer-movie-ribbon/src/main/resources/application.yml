@@ -16,3 +16,4 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+#集中式lb ,进程内lb，客户端的
