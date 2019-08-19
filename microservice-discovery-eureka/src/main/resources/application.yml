@@ -1,22 +1,26 @@
-#权限需要添加spring-boot-starter-security pom依赖
-security:
-  basic:
-    enabled: true
-  user:
-    name: user
-    password: password123
 server:
   port: 8761
 eureka:
   datacenter: cloud
   environment: product
   client:
+    healthcheck:
+      enabled: true #健康检查
     register-with-eureka: false #不向注册中心注册自己
     fetch-registry: false #表示自己端就是注册中心，职责是维护服务实例，不需要检索服务
     service-url:
-      defaultZone: http://user:password123@localhost:8761/eureka #与eurekaserver交互地址查询与注册服务都依赖此地址
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka #与eurekaserver交互地址查询与注册服务都依赖此地址#账号密码必须与下面的配置一致
   dashboard:
     enabled: true  #首页面板
-    path: /infox
+    path: /
   instance:
     hostname: localhost
+spring:
+  #权限需要添加spring-boot-starter-security pom依赖
+  security:
+    basic:
+      enbale: true
+    user:
+      name: user
+      password: user
+      roles: user
